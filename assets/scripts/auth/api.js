@@ -9,3 +9,7 @@ const signUp = function (data) { // wtf is data
     data,
   });
 };
+
+module.exports = {
+  signUp,
+};
