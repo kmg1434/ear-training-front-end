@@ -1,18 +1,19 @@
 'use strict';
 
+const vault = require('../vault.js');
+
 // SUCCESS FUNCTIONS
 
 const signUpSuccess = () => {
-  console.log('GOT HERE');
+  $('#sign-up-modal').modal('hide');
+  $('.modal-backdrop').remove();
 };
 
 const signInSuccess = (data) => {
-  vault.user = data.user;
-  $('.button-bar').show();
-  $('.login-alert').text('');
-  // hide sign in button so you can't sign in twice
-  $('#sign-in-btn').hide();
+  vault.user = data.user; // do i need to store this?
+  //$('#sign-in-btn').hide();
   $('#sign-in-modal').modal('hide');
+  $('.modal-backdrop').remove();
 
 };
 

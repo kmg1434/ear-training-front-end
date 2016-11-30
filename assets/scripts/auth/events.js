@@ -10,7 +10,6 @@ const onSignUp = function (e) {
   api.signUp(data)
   .then(ui.signUpSuccess)
   .catch(ui.signUpFailure);
-  //$('#sign-up-modal').modal('hide');
 };
 
 const onSignIn = function (event) {
