@@ -12,16 +12,4 @@ const authEvents = require('./auth/events.js');
 $(() => {
   authEvents.addHandlers();
 
-  // drop down menue attempt
-  $('.dropdown').hover(
-    function () {
-      $('.dropdown-menu', this).stop(true, true).slideDown('fast');
-      $(this).toggleClass('open');
-    },
-    function () {
-      $('.dropdown-menu', this).stop(true, true).slideUp('fast');
-      $(this).toggleClass('open');
-    }
-  );
-
 });

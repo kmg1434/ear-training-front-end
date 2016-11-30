@@ -4,8 +4,9 @@ const api = require('./api');
 const ui = require('./ui');
 const getFormFields = require('../../../lib/get-form-fields.js');
 
-const onSignUp = function (event) {
-  event.preventDefault();
+const onSignUp = function (e) {
+  console.log('GOT HERE');
+  e.preventDefault();
   let data = getFormFields(this);
   api.signUp(data)
   .then(ui.signUpSuccess)
@@ -13,7 +14,7 @@ const onSignUp = function (event) {
 };
 
 const addHandlers = () => {
-  // build HTML first
+  $('.sign-up-form').on('submit', onSignUp);
 };
 
 module.exports = {
