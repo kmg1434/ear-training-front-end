@@ -41,6 +41,12 @@ const addHandlers = () => {
   $('.sign-in-form').on('submit', onSignIn);
   $('.sign-out-form').on('submit', onSignOut);
   $('.change-password-form').on('submit', onChangePassword);
+
+  $('.sign-in-btn').on('click', (function () {
+    // Removes focus of the button.
+    $(this).blur();
+  }));
+
 };
 
 module.exports = {
