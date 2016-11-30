@@ -4,23 +4,35 @@ const vault = require('../vault.js');
 
 // SUCCESS FUNCTIONS
 
-const signUpSuccess = () => {
-  $('#sign-up-modal').modal('hide');
+const hideModals = () => {
+  $('#sign-up-modal').hide();
+  $('#sign-in-modal').hide();
+  $('#sign-out-modal').hide();
+  $('#change-password-modal').hide();
   $('.modal-backdrop').remove();
+};
+
+const signUpSuccess = () => {
+  hideModals();
 };
 
 const signInSuccess = (data) => {
   vault.user = data.user; // do i need to store this?
-  $('#sign-in-modal').modal('hide');
-  $('.modal-backdrop').remove();
+  //$('#sign-in-modal').modal('hide');
+
+  hideModals();
 
   //$('#sign-in-btn').hide();
 };
 
 const signOutSuccess = () => {
   vault.user = null;
-  $('#sign-out-modal').modal('hide');
-  $('.modal-backdrop').remove();
+
+  hideModals();
+};
+
+const changePasswordSuccess = () => {
+  hideModals();
 };
 
 // FAILURE FUNCTIONS
@@ -37,11 +49,17 @@ const signOutFailure = () => {
   console.log('error!');
 };
 
+const changePasswordFailure = () => {
+  console.log('error!');
+};
+
 module.exports = {
   signUpSuccess,
   signInSuccess,
   signOutSuccess,
+  changePasswordSuccess,
   signUpFailure,
   signInFailure,
   signOutFailure,
+  changePasswordFailure,
 };

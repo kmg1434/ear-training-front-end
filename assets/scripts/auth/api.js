@@ -28,8 +28,20 @@ const signOut = function () {
   });
 };
 
+const changePassword = function (data) {
+  return $.ajax({
+    method: 'PATCH',
+    url: vault.host + '/change-password/' + vault.user.id,
+    headers: {
+      Authorization: 'Token token=' + vault.user.token,
+    },
+    data,
+  });
+};
+
 module.exports = {
   signUp,
   signIn,
   signOut,
+  changePassword,
 };
