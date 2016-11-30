@@ -10,11 +10,20 @@ const onSignUp = function (e) {
   api.signUp(data)
   .then(ui.signUpSuccess)
   .catch(ui.signUpFailure);
-  $('#sign-up-modal').modal('hide');
+  //$('#sign-up-modal').modal('hide');
+};
+
+const onSignIn = function (event) {
+  event.preventDefault();
+  let data = getFormFields(event.target);
+  api.signIn(data)
+  .then(ui.signInSuccess)
+  .catch(ui.failure);
 };
 
 const addHandlers = () => {
   $('.sign-up-form').on('submit', onSignUp);
+  $('.sign-in-form').on('submit', onSignIn);
 };
 
 module.exports = {
