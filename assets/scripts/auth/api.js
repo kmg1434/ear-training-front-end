@@ -18,7 +18,18 @@ const signIn = function (data) {
   });
 };
 
+const signOut = function () {
+  return $.ajax({
+    method: 'DELETE',
+    url: vault.host + '/sign-out/' + vault.user.id,
+    headers: {
+      Authorization: 'Token token=' + vault.user.token,
+    },
+  });
+};
+
 module.exports = {
   signUp,
   signIn,
+  signOut,
 };
