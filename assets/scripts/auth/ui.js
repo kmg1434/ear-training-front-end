@@ -1,14 +1,14 @@
 'use strict';
 
 const signUpSuccess = () => {
-  $('#sign-up-modal').modal('hide');
+  console.log('GOT HERE');
 };
 
-const failure = () => {
-  //console.error(error);
+const signUpFailure = () => {
+  console.log('error!');
 };
 
 module.exports = {
-  failure,
   signUpSuccess,
+  signUpFailure,
 };
