@@ -10,6 +10,13 @@
 .navbutton {
 
   display: block;
+  margin: 10px;
+
+}
+
+.crud {
+
+  color: black;
 
 }
 
