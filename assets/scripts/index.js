@@ -7,9 +7,11 @@
 require('./example');
 
 const authEvents = require('./auth/events.js');
+const crudEvents = require('./crud/events.js');
 
 // On document ready
 $(() => {
   authEvents.addAuthHandlers();
+  crudEvents.addCrudHandlers();
 
 });
