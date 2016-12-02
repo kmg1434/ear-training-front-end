@@ -22,8 +22,8 @@ const onCreateGame = function (event) {
 const onDeleteGame = function (event) {
   event.preventDefault();
   let data = getFormFields(this);
-  console.log('got here');
-  api.deleteGame(data)
+  console.log(data);
+  api.deleteGame(data.game.id)
     .then(ui.deleteGameSuccess)
     .catch(ui.deleteGameFailure);
 };
@@ -34,10 +34,11 @@ const addCrudHandlers = () => {
   $('.create-game-button').on('click', function () {
     $('#create-game-modal').modal('show');
   });
+  $('.delete-game-button').on('click', function () {
+    $('#delete-game-modal').modal('show');
+  });
   $('.set-lvl-form').on('submit', onCreateGame);
-  $('.delete-lvl-form').on('submit', onDeleteGame);
-  $('.delete-game-button').on('click', onDeleteGame);
-
+  $('.delete-game-form').on('submit', onDeleteGame);
 };
 
 module.exports = {

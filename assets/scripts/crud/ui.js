@@ -20,7 +20,7 @@ const createGameFailure = () => {
 };
 
 const deleteGameSuccess = () => {
-  console.log('Woo you deleted it!');
+  $('#delete-game-modal').modal('hide');
 };
 
 const deleteGameFailure = () => {

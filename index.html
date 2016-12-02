@@ -41,20 +41,39 @@
             page content will be pushed off canvas.</p>
           <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
 
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /#page-content-wrapper -->
+
+  <!-- Delete Game Modal -->
+  <div class="modal fade" id="delete-game-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="create-game-label">Delete Game</h4>
+        </div>
+        <div class="modal-body">
 
 
-          <form class="delete-lvl-form">
+          <!-- Form Fields -->
+          <form class="delete-game-form">
             <div class="form-group">
-              <label for="level">Delete</label>
-              <input type="" name="game[lvl]" class="form-control">
+              <label for="lvl">Type Game ID to Delete</label>
+              <input type="number" name="game[id]" class="form-control" id="delete-game-input" placeholder="Level Number">
             </div>
+
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
           </form>
 
         </div>
       </div>
     </div>
   </div>
-  <!-- /#page-content-wrapper -->
+
 
   <!-- Create Game Modal -->
   <div class="modal fade" id="create-game-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

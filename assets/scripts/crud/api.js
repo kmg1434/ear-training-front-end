@@ -25,12 +25,11 @@ const createGame = function (data) {
 
 const deleteGame = function (data) {
   return $.ajax({
-    url: vault.host + '/games/',
+    url: vault.host + '/games/' + data.game.id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + vault.user.token,
     },
-    data,
   });
 };
 
