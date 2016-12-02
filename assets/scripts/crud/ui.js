@@ -12,10 +12,20 @@ const getGamesFailure = () => {
 
 const createGameSuccess = (data) => {
   vault.game = data.game;
-  console.log(data);
+
+  //console.log(data);
 };
 
 const createGameFailure = () => {
+  console.log('error!');
+};
+
+const deleteGameSuccess = () => {
+
+  console.log('Woo you deleted it!');
+};
+
+const deleteGameFailure = () => {
   console.log('error!');
 };
 
@@ -24,4 +34,6 @@ module.exports = {
   getGamesFailure,
   createGameSuccess,
   createGameFailure,
+  deleteGameSuccess,
+  deleteGameFailure,
 };

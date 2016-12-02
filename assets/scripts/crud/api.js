@@ -12,23 +12,30 @@ const getAllGames = function () {
   });
 };
 
-const createGame = function () {
+const createGame = function (data) {
   return $.ajax({
-    url: vault.host + '/games',
+    url: vault.host + '/games/',
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + vault.user.token,
     },
-    data: {
-      "game":{
-      "lvl":2,
-      "score":null
-    }
-  },
+    data,
+  });
+};
+
+const deleteGame = function (data) {
+  return $.ajax({
+    url: vault.host + '/games/',
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + vault.user.token,
+    },
+    data,
   });
 };
 
 module.exports = {
   getAllGames,
   createGame,
+  deleteGame,
 };
