@@ -41,39 +41,54 @@
             page content will be pushed off canvas.</p>
           <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
 
-          <!-- Radio Buttons -->
-          <form class="set-lvl-form">
-            <div class="form-group">
-              <label for="password">Level 1</label>
-              <input type="radio" name="game[lvl]" value="1" class="form-control">
-            </div>
-            <div class="form-group">
-              <label for="password">Level 2</label>
-              <input type="radio" name="game[lvl]" value="2" class="form-control">
-            </div>
-            <div class="form-group">
-              <label for="password">Level 3</label>
-              <input type="radio" name="game[lvl]" value="3" class="form-control">
-            </div>
-            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-            <button type="submit" class="btn btn-primary select-lvl-btn">Select Level</button>
 
+
+          <form class="delete-lvl-form">
+            <div class="form-group">
+              <label for="level">Delete</label>
+              <input type="" name="game[lvl]" class="form-control">
+            </div>
           </form>
-<!--
-          <form class="level-form">
-            <h3>Level</h3>
-            <input type="radio" name="game[lvl]" value="1" checked> Level 1<br>
-            <input type="radio" name="lvl" value="2"> Level 2<br>
-            <input type="radio" name="lvl" value="3"> Level 3<br>
-            <input type="submit">
-          </form>
-  -->
 
         </div>
       </div>
     </div>
   </div>
   <!-- /#page-content-wrapper -->
+
+  <!-- Create Game Modal -->
+  <div class="modal fade" id="create-game-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="create-game-label">Create Game</h4>
+        </div>
+        <div class="modal-body">
+
+
+          <!-- Radio Buttons Form -->
+          <form class="set-lvl-form">
+            <div class="form-group">
+              <label for="level">Level 1</label>
+              <input type="radio" name="game[lvl]" value="1" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="level">Level 2</label>
+              <input type="radio" name="game[lvl]" value="2" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="level">Level 3</label>
+              <input type="radio" name="game[lvl]" value="3" class="form-control">
+            </div>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-primary select-lvl-btn">Select Level</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Sign Up Modal -->
   <div class="modal fade" id="sign-up-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

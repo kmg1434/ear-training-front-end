@@ -12,8 +12,7 @@ const getGamesFailure = () => {
 
 const createGameSuccess = (data) => {
   vault.game = data.game;
-
-  //console.log(data);
+  $('#create-game-modal').modal('hide');
 };
 
 const createGameFailure = () => {
@@ -21,7 +20,6 @@ const createGameFailure = () => {
 };
 
 const deleteGameSuccess = () => {
-
   console.log('Woo you deleted it!');
 };
 

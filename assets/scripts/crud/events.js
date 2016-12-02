@@ -31,6 +31,9 @@ const onDeleteGame = function (event) {
 const addCrudHandlers = () => {
 
   $('.get-games-button').on('click', onGetAllGames);
+  $('.create-game-button').on('click', function () {
+    $('#create-game-modal').modal('show');
+  });
   $('.set-lvl-form').on('submit', onCreateGame);
   $('.delete-lvl-form').on('submit', onDeleteGame);
   $('.delete-game-button').on('click', onDeleteGame);
