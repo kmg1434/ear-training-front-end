@@ -9,9 +9,17 @@ const onGetAllGames = function () {
     .catch(ui.getGamesFailure);
 };
 
+const onCreateGame = function (event) {
+  event.preventDefault();
+  api.createGame()
+    .then(ui.createGameSuccess)
+    .catch(ui.createGameFailure);
+};
+
 const addCrudHandlers = () => {
 
   $('.get-games-button').on('click', onGetAllGames);
+  $('.create-game-button').on('click', onCreateGame);
 
 };
 
