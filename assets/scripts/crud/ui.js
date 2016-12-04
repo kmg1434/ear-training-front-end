@@ -8,14 +8,8 @@ const getGamesSuccess = (data) => {
 
   console.log(games); // array of all game objects
   console.log(games[0].id);
-  console.log(vault);
+  console.log(vault.user.email);
 
-  //let userGames = [];
-  // for (var i = 0; i < games.length; i++) {
-  //   if (games[i].id === vault.game.user.id) {
-  //     userGames = data.games[i];
-  //   }
-  // }
 
   $('.bars').html(getGames(games));
 };
