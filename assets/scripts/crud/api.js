@@ -23,6 +23,18 @@ const createGame = function (data) {
   });
 };
 
+const updateGame = function (data) {
+  console.log(data);
+  return $.ajax({
+    url: vault.host + '/games/' + vault.game.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + vault.user.token,
+    },
+    data,
+  });
+};
+
 const deleteGame = function (data) {
   return $.ajax({
     url: vault.host + '/games/' + data.game.id,
@@ -37,4 +49,5 @@ module.exports = {
   getAllGames,
   createGame,
   deleteGame,
+  updateGame,
 };
