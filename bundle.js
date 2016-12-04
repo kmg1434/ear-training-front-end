@@ -101,7 +101,7 @@ webpackJsonp([0],[
 
 	/* WEBPACK VAR INJECTION */(function($) {'use strict';
 
-	var vault = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../vault\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var vault = __webpack_require__(6);
 
 	var signUp = function signUp(data) {
 	  return $.ajax({
@@ -149,13 +149,27 @@ webpackJsonp([0],[
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 6 */,
+/* 6 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	var vault = {};
+
+	module.exports = {
+	  host: 'https://damp-lake-94214.herokuapp.com',
+
+	  // host: 'http://localhost:4741',
+	  vault: vault
+	};
+
+/***/ },
 /* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function($) {'use strict';
 
-	var vault = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../vault.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var vault = __webpack_require__(6);
 
 	// SUCCESS FUNCTIONS
 
@@ -314,14 +328,16 @@ webpackJsonp([0],[
 	  api.deleteGame(data.game.id).then(ui.deleteGameSuccess).catch(ui.deleteGameFailure);
 	};
 
-	var onUpdateGame = function onUpdateGame() {
+	var onUpdateGame = function onUpdateGame(event) {
+	  event.preventDefault();
+	  var current = getFormFields(this);
 	  console.log('update game');
 	  var data = {
 	    game: {
 	      score: glob.vars.score
 	    }
 	  };
-	  api.updateGame(data).then(ui.updateSuccess).catch(ui.updateFailure);
+	  api.updateGame(data, current).then(ui.updateGameSuccess).catch(ui.updateGameFailure);
 	};
 
 	var addCrudHandlers = function addCrudHandlers() {
@@ -333,9 +349,12 @@ webpackJsonp([0],[
 	  $('.delete-game-button').on('click', function () {
 	    $('#delete-game-modal').modal('show');
 	  });
+	  $('.update-game-button').on('click', function () {
+	    $('#update-game-modal').modal('show');
+	  });
 	  $('.set-lvl-form').on('submit', onCreateGame);
 	  $('.delete-game-form').on('submit', onDeleteGame);
-	  $('.update-game-button').on('click', onUpdateGame);
+	  $('.update-game-form').on('submit', onUpdateGame);
 	};
 
 	module.exports = {
@@ -349,7 +368,7 @@ webpackJsonp([0],[
 
 	/* WEBPACK VAR INJECTION */(function($) {'use strict';
 
-	var vault = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../vault.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var vault = __webpack_require__(6);
 	var glob = __webpack_require__(11);
 
 	var getAllGames = function getAllGames() {
@@ -373,10 +392,10 @@ webpackJsonp([0],[
 	  });
 	};
 
-	var updateGame = function updateGame(data) {
+	var updateGame = function updateGame(data, current) {
+	  glob.vars.currentGameId = current.game.id;
 	  vault.game = data.game;
-	  console.log(data);
-	  console.log(vault.game.id);
+	  console.log(current);
 	  return $.ajax({
 	    url: vault.host + '/games/' + glob.vars.currentGameId,
 	    method: 'PATCH',
@@ -427,7 +446,7 @@ webpackJsonp([0],[
 
 	/* WEBPACK VAR INJECTION */(function($) {'use strict';
 
-	var vault = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../vault.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	var vault = __webpack_require__(6);
 	var getGames = __webpack_require__(13);
 
 	var getGamesSuccess = function getGamesSuccess(data) {
@@ -459,13 +478,23 @@ webpackJsonp([0],[
 	  console.log('error!');
 	};
 
+	var updateGameSuccess = function updateGameSuccess() {
+	  $('#update-game-modal').modal('hide');
+	};
+
+	var updateGameFailure = function updateGameFailure() {
+	  console.log('error!');
+	};
+
 	module.exports = {
 	  getGamesSuccess: getGamesSuccess,
 	  getGamesFailure: getGamesFailure,
 	  createGameSuccess: createGameSuccess,
 	  createGameFailure: createGameFailure,
 	  deleteGameSuccess: deleteGameSuccess,
-	  deleteGameFailure: deleteGameFailure
+	  deleteGameFailure: deleteGameFailure,
+	  updateGameSuccess: updateGameSuccess,
+	  updateGameFailure: updateGameFailure
 	};
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
