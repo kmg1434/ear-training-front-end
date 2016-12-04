@@ -100,7 +100,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	__webpack_require__(2);
-	module.exports = __webpack_require__(22);
+	module.exports = __webpack_require__(25);
 
 
 /***/ },
@@ -10341,7 +10341,7 @@
 
 /***/ },
 
-/***/ 22:
+/***/ 25:
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(jQuery) {/*!
