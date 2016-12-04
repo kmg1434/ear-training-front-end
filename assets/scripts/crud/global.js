@@ -2,7 +2,7 @@
 
 const vars = {
   currentGameId: 2,
-  score: Math.random(),
+  score: 0,
 };
 
 module.exports = {
