@@ -36,8 +36,9 @@ const updateGame = function (data) {
 };
 
 const deleteGame = function (data) {
+  console.log(data);
   return $.ajax({
-    url: vault.host + '/games/' + data.game.id,
+    url: vault.host + '/games/' + data,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + vault.user.token,

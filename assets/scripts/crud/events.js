@@ -23,7 +23,6 @@ const onCreateGame = function (event) {
 const onDeleteGame = function (event) {
   event.preventDefault();
   let data = getFormFields(this);
-  console.log(data);
   api.deleteGame(data.game.id)
     .then(ui.deleteGameSuccess)
     .catch(ui.deleteGameFailure);
