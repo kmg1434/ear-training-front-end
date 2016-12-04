@@ -34,12 +34,15 @@
           <button type="button" class="crud create-game-button">Create Game</button>
           <button type="button" class="crud get-game-button">Get Game</button>
           <button type="button" class="crud get-games-button">Get All Games</button>
-          <button type="button" class="crud update-game-button">Update Game</button>
           <button type="button" class="crud delete-game-button">Delete Game</button>
 
           <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the
             page content will be pushed off canvas.</p>
           <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
+
+          <button type="button" class="crud update-game-button">Update Game</button>
+
+          <div class="bars"></div>
 
         </div>
       </div>
@@ -62,7 +65,7 @@
           <form class="delete-game-form">
             <div class="form-group">
               <label for="lvl">Type Game ID to Delete</label>
-              <input type="number" name="game[id]" class="form-control" id="delete-game-input" placeholder="Level Number">
+              <input type="number" name="game[id]" class="form-control" id="delete-game-input" placeholder="Game ID">
             </div>
 
             <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
