@@ -1,7 +1,7 @@
 'use strict';
 
 const vars = {
-  currentGameIdea: 0,
+  currentGameId: 2,
   score: 0.5,
 };
 

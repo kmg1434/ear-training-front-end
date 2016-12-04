@@ -29,9 +29,10 @@ const onDeleteGame = function (event) {
 };
 
 const onUpdateGame = function () {
+  console.log('update game');
   let data = {
-    "game": {
-      "score": glob.vars.score,
+    game: {
+      score: Math.random(),
     },
   };
   api.updateGame(data)

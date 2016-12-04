@@ -7,9 +7,6 @@ const getGamesSuccess = (data) => {
   let games = data.games;
 
   console.log(games); // array of all game objects
-  console.log(games[0].id);
-  console.log(vault.user.email);
-
 
   $('.bars').html(getGames(games));
 };

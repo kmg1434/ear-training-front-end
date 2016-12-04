@@ -1,6 +1,7 @@
 'use strict';
 
 const vault = require('../vault.js');
+const glob = require('./global.js');
 
 const getAllGames = function () {
   return $.ajax({
@@ -24,9 +25,11 @@ const createGame = function (data) {
 };
 
 const updateGame = function (data) {
+  vault.game = data.game;
   console.log(data);
+  console.log(vault.game.id);
   return $.ajax({
-    url: vault.host + '/games/' + vault.game.id,
+    url: vault.host + '/games/' + glob.vars.currentGameId,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + vault.user.token,
