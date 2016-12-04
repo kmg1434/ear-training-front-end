@@ -7,8 +7,8 @@ const getGamesSuccess = (data) => {
   let games = data.games;
 
   console.log(games); // array of all game objects
-  //console.log(games[0].id);
-  //console.log(vault.game);
+  console.log(games[0].id);
+  console.log(vault);
 
   //let userGames = [];
   // for (var i = 0; i < games.length; i++) {
