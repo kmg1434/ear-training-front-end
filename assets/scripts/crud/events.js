@@ -28,16 +28,18 @@ const onDeleteGame = function (event) {
     .catch(ui.deleteGameFailure);
 };
 
-const onUpdateGame = function () {
+const onUpdateGame = function (event) {
+  event.preventDefault();
+  let current = getFormFields(this);
   console.log('update game');
   let data = {
     game: {
       score: glob.vars.score,
     },
   };
-  api.updateGame(data)
-    .then(ui.updateSuccess)
-    .catch(ui.updateFailure);
+  api.updateGame(data, current)
+    .then(ui.updateGameSuccess)
+    .catch(ui.updateGameFailure);
 };
 
 const addCrudHandlers = () => {
@@ -49,9 +51,12 @@ const addCrudHandlers = () => {
   $('.delete-game-button').on('click', function () {
     $('#delete-game-modal').modal('show');
   });
+  $('.update-game-button').on('click', function () {
+    $('#update-game-modal').modal('show');
+  });
   $('.set-lvl-form').on('submit', onCreateGame);
   $('.delete-game-form').on('submit', onDeleteGame);
-  $('.update-game-button').on('click', onUpdateGame);
+  $('.update-game-form').on('submit', onUpdateGame);
 };
 
 module.exports = {
