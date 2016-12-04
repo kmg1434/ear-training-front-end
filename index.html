@@ -77,6 +77,33 @@
     </div>
   </div>
 
+  <!-- Update Game Modal -->
+  <div class="modal fade" id="update-game-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="create-game-label">Update Game</h4>
+        </div>
+        <div class="modal-body">
+
+
+          <!-- Form Fields -->
+          <form class="update-game-form">
+            <div class="form-group">
+              <label for="lvl">Type Game ID to Update</label>
+              <input type="number" name="game[id]" class="form-control" id="update-game-input" placeholder="Game ID">
+            </div>
+
+            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <!-- Create Game Modal -->
   <div class="modal fade" id="create-game-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

@@ -32,6 +32,14 @@ const deleteGameFailure = () => {
   console.log('error!');
 };
 
+const updateGameSuccess = () => {
+  $('#update-game-modal').modal('hide');
+};
+
+const updateGameFailure = () => {
+  console.log('error!');
+};
+
 module.exports = {
   getGamesSuccess,
   getGamesFailure,
@@ -39,4 +47,6 @@ module.exports = {
   createGameFailure,
   deleteGameSuccess,
   deleteGameFailure,
+  updateGameSuccess,
+  updateGameFailure,
 };

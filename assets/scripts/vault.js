@@ -5,6 +5,7 @@ const vault = {
 };
 
 module.exports = {
-  host: 'http://localhost:4741',
+  host: 'https://damp-lake-94214.herokuapp.com',
+  // host: 'http://localhost:4741',
   vault,
 };
