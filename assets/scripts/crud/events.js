@@ -32,7 +32,7 @@ const onUpdateGame = function () {
   console.log('update game');
   let data = {
     game: {
-      score: Math.random(),
+      score: glob.vars.score,
     },
   };
   api.updateGame(data)
