@@ -1,6 +1,7 @@
 'use strict';
 
 const vars = {
+  currentGameIdea: 0,
   score: 0.5,
 };
 

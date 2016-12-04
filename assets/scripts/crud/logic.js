@@ -6,6 +6,10 @@ const ui = require('./ui');
 const getFormFields = require('../../../lib/get-form-fields.js');
 const glob = require('./global.js');
 
-module.exports = {
+const selectGame = function () {
 
+};
+
+module.exports = {
+  selectGame,
 };
