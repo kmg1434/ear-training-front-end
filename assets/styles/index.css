@@ -1,0 +1,29 @@
+.sidebar {
+    background-color: black;
+    width: 30%;
+    height: 600px;
+    padding: 10px;
+    text-align: center;
+    float: left;
+}
+
+.navbutton {
+
+  display: block;
+  margin: 10px;
+
+}
+
+.crud {
+
+  color: black;
+
+}
+
+.content {
+    background-color: green;
+    # color: white;
+    height: 600px;
+    width: 70%;
+    float: left;
+}

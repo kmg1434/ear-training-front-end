@@ -36,13 +36,19 @@ const onChangePassword = function (event) {
   .catch(ui.changePasswordFailure);
 };
 
-const addHandlers = () => {
+const addAuthHandlers = () => {
   $('.sign-up-form').on('submit', onSignUp);
   $('.sign-in-form').on('submit', onSignIn);
   $('.sign-out-form').on('submit', onSignOut);
   $('.change-password-form').on('submit', onChangePassword);
+
+  $('.sign-in-btn').on('click', (function () {
+    // Removes focus of the button.
+    $(this).blur();
+  }));
+
 };
 
 module.exports = {
-  addHandlers,
+  addAuthHandlers,
 };

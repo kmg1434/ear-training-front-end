@@ -5,6 +5,7 @@ const vault = require('../vault.js');
 // SUCCESS FUNCTIONS
 
 const hideModals = () => {
+
   $('#sign-up-modal').hide();
   $('#sign-in-modal').hide();
   $('#sign-out-modal').hide();
