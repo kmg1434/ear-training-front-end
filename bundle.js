@@ -101,7 +101,7 @@ webpackJsonp([0],[
 
 	/* WEBPACK VAR INJECTION */(function($) {'use strict';
 
-	var vault = __webpack_require__(6);
+	var vault = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../vault\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 
 	var signUp = function signUp(data) {
 	  return $.ajax({
@@ -149,26 +149,13 @@ webpackJsonp([0],[
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
-/* 6 */
-/***/ function(module, exports) {
-
-	'use strict';
-
-	var vault = {};
-
-	module.exports = {
-	  // host: 'https://damp-lake-94214.herokuapp.com'
-	  host: 'http://localhost:4741',
-	  vault: vault
-	};
-
-/***/ },
+/* 6 */,
 /* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function($) {'use strict';
 
-	var vault = __webpack_require__(6);
+	var vault = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../vault.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 
 	// SUCCESS FUNCTIONS
 
@@ -362,7 +349,7 @@ webpackJsonp([0],[
 
 	/* WEBPACK VAR INJECTION */(function($) {'use strict';
 
-	var vault = __webpack_require__(6);
+	var vault = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../vault.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 	var glob = __webpack_require__(11);
 
 	var getAllGames = function getAllGames() {
@@ -440,7 +427,7 @@ webpackJsonp([0],[
 
 	/* WEBPACK VAR INJECTION */(function($) {'use strict';
 
-	var vault = __webpack_require__(6);
+	var vault = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../vault.js\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 	var getGames = __webpack_require__(13);
 
 	var getGamesSuccess = function getGamesSuccess(data) {
