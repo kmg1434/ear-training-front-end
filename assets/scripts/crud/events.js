@@ -15,7 +15,7 @@ const onGetAllGames = function () {
 const onCreateGame = function (event) {
   event.preventDefault();
   let data = getFormFields(this);
-  console.log('data.game.lvl: ' + data.game.lvl);
+  //console.log('data.game.lvl: ' + data.game.lvl);
   api.createGame(data)
     .then(ui.createGameSuccess)
     .catch(ui.createGameFailure);
@@ -32,7 +32,6 @@ const onDeleteGame = function (event) {
 const onUpdateGame = function (event) {
   event.preventDefault();
   let current = getFormFields(this);
-  console.log('update game');
   let data = {
     game: {
       score: Math.random(),

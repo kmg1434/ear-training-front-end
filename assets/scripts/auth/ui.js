@@ -42,19 +42,19 @@ const changePasswordSuccess = () => {
 // FAILURE FUNCTIONS
 
 const signUpFailure = () => {
-  console.log('error!');
+  //console.log('error!');
 };
 
 const signInFailure = () => {
-  console.log('error!');
+  //console.log('error!');
 };
 
 const signOutFailure = () => {
-  console.log('error!');
+  //console.log('error!');
 };
 
 const changePasswordFailure = () => {
-  console.log('error!');
+  //console.log('error!');
 };
 
 module.exports = {
