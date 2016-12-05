@@ -1,6 +1,8 @@
 # Ear Training
 ### by Kevin Grady
 [Play here](https://kmg1434.github.io/ear-training-front-end)
+[Front end](https://github.com/kmg1434/ear-training-front-end)
+[Back end](https://github.com/kmg1434/ear-training-back-end)
 
 # Introduction
 
