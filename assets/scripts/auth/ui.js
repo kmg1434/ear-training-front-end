@@ -18,17 +18,20 @@ const signUpSuccess = () => {
 };
 
 const signInSuccess = (data) => {
-  vault.user = data.user; // do i need to store this?
+  vault.user = data.user;
   //$('#sign-in-modal').modal('hide');
-
+  $('.sign-out-btn').show();
+  $('.change-password-btn').show();
+  $('.sign-in-btn').hide();
+  $('.sign-up-btn').hide();
   hideModals();
 
-  //$('#sign-in-btn').hide();
 };
 
 const signOutSuccess = () => {
   vault.user = null;
-
+  $('.sign-in-btn').show();
+  $('.sign-up-btn').show();
   hideModals();
 };
 

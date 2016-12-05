@@ -17,7 +17,7 @@
 <body class="container-fluid">
 
   <div class="sidebar">
-    <button type="button" value="HTML" class="sign-up-btn navbutton" data-toggle="modal" data-target="#sign-up-modal">Sign Up</button>
+    <button type="button" class="sign-up-btn navbutton" data-toggle="modal" data-target="#sign-up-modal">Sign Up</button>
     <button type="button" class="sign-in-btn navbutton" data-toggle="modal" data-target="#sign-in-modal">Sign In</button>
     <button type="button" class="sign-out-btn navbutton" data-toggle="modal" data-target="#sign-out-modal">Sign Out</button>
     <button type="button" class="change-password-btn navbutton" data-toggle="modal" data-target="#change-password-modal">Change Password</button>
@@ -35,14 +35,11 @@
           <button type="button" class="crud get-games-button">Get All Games</button>
           <button type="button" class="crud delete-game-button">Delete Game</button>
 
-
-          <code>#page-content-wrapper</code>.</p>
-
           <button type="button" class="crud update-game-button">Play Game</button>
           <!-- Form Fields -->
           <form class="update-game-form">
             <div class="form-group">
-              <label for="lvl">Type Game ID to Update</label>
+              <label for="lvl">Type Game ID to Play</label>
               <input type="number" name="game[id]" class="form-control" id="update-game-input" placeholder="Game ID">
             </div>
 
@@ -64,7 +61,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="create-game-label">Delete Game</h4>
+          <h4 class="modal-title" id="delete-game-label">Delete Game</h4>
         </div>
         <div class="modal-body">
 
