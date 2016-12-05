@@ -210,19 +210,19 @@ webpackJsonp([0],[
 	// FAILURE FUNCTIONS
 
 	var signUpFailure = function signUpFailure() {
-	  console.log('error!');
+	  //console.log('error!');
 	};
 
 	var signInFailure = function signInFailure() {
-	  console.log('error!');
+	  //console.log('error!');
 	};
 
 	var signOutFailure = function signOutFailure() {
-	  console.log('error!');
+	  //console.log('error!');
 	};
 
 	var changePasswordFailure = function changePasswordFailure() {
-	  console.log('error!');
+	  //console.log('error!');
 	};
 
 	module.exports = {
@@ -321,7 +321,7 @@ webpackJsonp([0],[
 	var onCreateGame = function onCreateGame(event) {
 	  event.preventDefault();
 	  var data = getFormFields(this);
-	  console.log('data.game.lvl: ' + data.game.lvl);
+	  //console.log('data.game.lvl: ' + data.game.lvl);
 	  api.createGame(data).then(ui.createGameSuccess).catch(ui.createGameFailure);
 	};
 
@@ -334,7 +334,6 @@ webpackJsonp([0],[
 	var onUpdateGame = function onUpdateGame(event) {
 	  event.preventDefault();
 	  var current = getFormFields(this);
-	  console.log('update game');
 	  var data = {
 	    game: {
 	      score: Math.random()
@@ -398,7 +397,7 @@ webpackJsonp([0],[
 	var updateGame = function updateGame(data, current) {
 	  glob.vars.currentGameId = current.game.id;
 	  vault.game = data.game;
-	  console.log(current);
+	  //console.log(current);
 	  return $.ajax({
 	    url: vault.host + '/games/' + glob.vars.currentGameId,
 	    method: 'PATCH',
@@ -410,7 +409,7 @@ webpackJsonp([0],[
 	};
 
 	var deleteGame = function deleteGame(data) {
-	  console.log(data);
+	  //console.log(data);
 	  return $.ajax({
 	    url: vault.host + '/games/' + data,
 	    method: 'DELETE',
@@ -455,13 +454,13 @@ webpackJsonp([0],[
 	var getGamesSuccess = function getGamesSuccess(data) {
 	  var games = data.games;
 
-	  console.log(games); // array of all game objects
+	  //console.log(games); // array of all game objects
 
 	  $('.bars').html(getGames(games));
 	};
 
 	var getGamesFailure = function getGamesFailure() {
-	  console.log('error!');
+	  //console.log('error!');
 	};
 
 	var createGameSuccess = function createGameSuccess(data) {
@@ -470,7 +469,7 @@ webpackJsonp([0],[
 	};
 
 	var createGameFailure = function createGameFailure() {
-	  console.log('error!');
+	  //console.log('error!');
 	};
 
 	var deleteGameSuccess = function deleteGameSuccess() {
@@ -478,7 +477,7 @@ webpackJsonp([0],[
 	};
 
 	var deleteGameFailure = function deleteGameFailure() {
-	  console.log('error!');
+	  //console.log('error!');
 	};
 
 	var updateGameSuccess = function updateGameSuccess() {
@@ -486,7 +485,7 @@ webpackJsonp([0],[
 	};
 
 	var updateGameFailure = function updateGameFailure() {
-	  console.log('error!');
+	  //console.log('error!');
 	};
 
 	module.exports = {
