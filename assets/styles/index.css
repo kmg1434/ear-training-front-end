@@ -7,6 +7,21 @@
     float: left;
 }
 
+.show-games {
+  display: inline-block;
+  background-color: white;
+  border: black;
+  border-width: 3px;
+  border-radius: 5px;
+  padding: 5px;
+  # float: left;
+  padding-right: 10px;
+}
+
+.hb-score .hb-lvl {
+  float: right;
+}
+
 .update-game-button {
   margin-top: 50px;
   margin-right: 500px;

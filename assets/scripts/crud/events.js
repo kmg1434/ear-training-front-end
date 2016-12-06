@@ -35,7 +35,7 @@ const onUpdateGame = function (event) {
   console.log('update game');
   let data = {
     game: {
-      score: Math.random(),
+      score: (Math.random() * 100).toFixed(0),
     },
   };
   api.updateGame(data, current)
@@ -51,9 +51,6 @@ const addCrudHandlers = () => {
   });
   $('.delete-game-button').on('click', function () {
     $('#delete-game-modal').modal('show');
-  });
-  $('.update-game-button').on('click', function () {
-    $('#update-game-modal').modal('show');
   });
   $('.set-lvl-form').on('submit', onCreateGame);
   $('.delete-game-form').on('submit', onDeleteGame);
