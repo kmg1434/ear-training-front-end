@@ -1,11 +1,11 @@
 'use strict';
 
 const vault = require('../vault.js');
+const events = require('./events.js')
 
 // SUCCESS FUNCTIONS
 
 const hideModals = () => {
-
   $('#sign-up-modal').hide();
   $('#sign-in-modal').hide();
   $('#sign-out-modal').hide();
@@ -32,6 +32,8 @@ const signOutSuccess = () => {
   vault.user = null;
   $('.sign-in-btn').show();
   $('.sign-up-btn').show();
+  $('.change-password-btn').hide();
+  $('.sign-out-btn').hide();
   hideModals();
 };
 
