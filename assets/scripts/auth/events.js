@@ -41,6 +41,7 @@ const onChangePassword = function (event) {
 };
 
 const addAuthHandlers = () => {
+  $('.play-ui').hide();
   $('.sign-up-form').on('submit', onSignUp);
   $('.sign-in-form').on('submit', onSignIn);
   $('.sign-out-form').on('submit', onSignOut);

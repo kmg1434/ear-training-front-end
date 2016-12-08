@@ -20,6 +20,7 @@ const signUpSuccess = () => {
 
 const signInSuccess = (data) => {
   vault.user = data.user;
+  $('.play-ui').show();
   $('.sign-out-btn').show();
   $('.change-password-btn').show();
   $('.sign-in-btn').hide();
@@ -30,6 +31,7 @@ const signInSuccess = (data) => {
 
 const signOutSuccess = () => {
   vault.user = null;
+  $('.play-ui').hide();
   $('.sign-in-btn').show();
   $('.sign-up-btn').show();
   $('.change-password-btn').hide();
