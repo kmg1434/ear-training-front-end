@@ -7,8 +7,8 @@ const getGamesSuccess = (data) => {
   let games = data.games;
 
   console.log(games); // array of all game objects
-
   $('.bars').html(getGames(games));
+  $('.bars').show();
 };
 
 const getGamesFailure = () => {
