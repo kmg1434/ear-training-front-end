@@ -34,6 +34,7 @@ const signOutSuccess = () => {
   $('.sign-up-btn').show();
   $('.change-password-btn').hide();
   $('.sign-out-btn').hide();
+  $('.bars').hide();
   hideModals();
 };
 
