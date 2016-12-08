@@ -13,7 +13,7 @@ const onSignUp = function (e) {
     return api.signIn(data);
   })
   .then(ui.signInSuccess)
-  .catch(ui.signInFailure)
+  .catch(ui.signInFailure);
 };
 
 const onSignIn = function (event) {
@@ -45,7 +45,6 @@ const addAuthHandlers = () => {
   $('.sign-in-form').on('submit', onSignIn);
   $('.sign-out-form').on('submit', onSignOut);
   $('.change-password-form').on('submit', onChangePassword);
-  }));
 
 };
 

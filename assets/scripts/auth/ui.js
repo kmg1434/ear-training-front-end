@@ -1,7 +1,8 @@
 'use strict';
 
 const vault = require('../vault.js');
-const events = require('./events.js')
+
+// const events = require('./events.js');
 
 // SUCCESS FUNCTIONS
 
@@ -19,7 +20,6 @@ const signUpSuccess = () => {
 
 const signInSuccess = (data) => {
   vault.user = data.user;
-  //$('#sign-in-modal').modal('hide');
   $('.sign-out-btn').show();
   $('.change-password-btn').show();
   $('.sign-in-btn').hide();
