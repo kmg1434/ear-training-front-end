@@ -8,7 +8,7 @@ const vault = require('../vault.js');
 
 const hideModals = () => {
   $('#sign-up-modal').hide();
-  $('#sign-in-modal').hide();
+//  $('#sign-in-modal').hide();
   $('#sign-out-modal').hide();
   $('#change-password-modal').hide();
   $('.modal-backdrop').remove();
@@ -25,7 +25,9 @@ const signInSuccess = (data) => {
   $('.change-password-btn').show();
   $('.sign-in-btn').hide();
   $('.sign-up-btn').hide();
-  hideModals();
+  $('#sign-in-modal').modal('hide');
+
+  //hideModals();
 
 };
 

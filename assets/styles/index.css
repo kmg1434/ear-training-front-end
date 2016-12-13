@@ -9,6 +9,7 @@
 
 .update-game-form {
   margin-top: 50px;
+  margin-bottom: 25px;
 }
 
 .show-games {
@@ -20,6 +21,10 @@
   padding: 5px;
   # float: left;
   padding-right: 10px;
+}
+
+.update-game-form {
+  max-width: 100px;
 }
 
 .hb-score .hb-lvl {
