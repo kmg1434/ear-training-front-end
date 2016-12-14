@@ -8,8 +8,12 @@ const onSignUp = function (e) {
   e.preventDefault();
   let data = getFormFields(this);
   api.signUp(data)
-  .then(ui.signUpSuccess)
-  .catch(ui.signUpFailure);
+  .then((responseData) => {
+    ui.signUpSuccess(responseData);
+    return api.signIn(data);
+  })
+  .then(ui.signInSuccess)
+  .catch(ui.authFailure);
 };
 
 const onSignIn = function (event) {
@@ -17,7 +21,7 @@ const onSignIn = function (event) {
   let data = getFormFields(event.target);
   api.signIn(data)
   .then(ui.signInSuccess)
-  .catch(ui.failure);
+  .catch(ui.authFailure);
 };
 
 const onSignOut = function (event) {
@@ -25,7 +29,7 @@ const onSignOut = function (event) {
   let data = getFormFields(event.target);
   api.signOut(data)
   .then(ui.signOutSuccess)
-  .catch(ui.signOutFailure);
+  .catch(ui.authFailure);
 };
 
 const onChangePassword = function (event) {
@@ -33,19 +37,15 @@ const onChangePassword = function (event) {
   let data = getFormFields(event.target);
   api.changePassword(data)
   .then(ui.changePasswordSuccess)
-  .catch(ui.changePasswordFailure);
+  .catch(ui.authFailure);
 };
 
 const addAuthHandlers = () => {
+  $('.play-ui').hide();
   $('.sign-up-form').on('submit', onSignUp);
   $('.sign-in-form').on('submit', onSignIn);
   $('.sign-out-form').on('submit', onSignOut);
   $('.change-password-form').on('submit', onChangePassword);
-
-  $('.sign-in-btn').on('click', (function () {
-    // Removes focus of the button.
-    $(this).blur();
-  }));
 
 };
 

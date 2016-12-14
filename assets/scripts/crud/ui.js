@@ -6,13 +6,14 @@ const getGames = require('../handlebars_templates/show-games.handlebars');
 const getGamesSuccess = (data) => {
   let games = data.games;
 
-  //console.log(games); // array of all game objects
+  // console.log(games); // array of all game objects
 
   $('.bars').html(getGames(games));
+  $('.bars').show();
 };
 
 const getGamesFailure = () => {
-  //console.log('error!');
+  // console.log('error!');
 };
 
 const createGameSuccess = (data) => {
@@ -21,7 +22,7 @@ const createGameSuccess = (data) => {
 };
 
 const createGameFailure = () => {
-  //console.log('error!');
+  // console.log('error!');
 };
 
 const deleteGameSuccess = () => {
@@ -29,7 +30,7 @@ const deleteGameSuccess = () => {
 };
 
 const deleteGameFailure = () => {
-  //console.log('error!');
+  // console.log('error!');
 };
 
 const updateGameSuccess = () => {
@@ -37,16 +38,12 @@ const updateGameSuccess = () => {
 };
 
 const updateGameFailure = () => {
-  //console.log('error!');
+  // console.log('error!');
 };
 
 module.exports = {
   getGamesSuccess,
-  getGamesFailure,
   createGameSuccess,
-  createGameFailure,
   deleteGameSuccess,
-  deleteGameFailure,
   updateGameSuccess,
-  updateGameFailure,
 };

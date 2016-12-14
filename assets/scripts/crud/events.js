@@ -15,7 +15,11 @@ const onGetAllGames = function () {
 const onCreateGame = function (event) {
   event.preventDefault();
   let data = getFormFields(this);
+<<<<<<< HEAD
   //console.log('data.game.lvl: ' + data.game.lvl);
+=======
+  // // // console.log('data.game.lvl: ' + data.game.lvl);
+>>>>>>> ui
   api.createGame(data)
     .then(ui.createGameSuccess)
     .catch(ui.createGameFailure);
@@ -32,9 +36,13 @@ const onDeleteGame = function (event) {
 const onUpdateGame = function (event) {
   event.preventDefault();
   let current = getFormFields(this);
+<<<<<<< HEAD
+=======
+  // // // console.log('update game');
+>>>>>>> ui
   let data = {
     game: {
-      score: Math.random(),
+      score: (Math.random() * 100).toFixed(1),
     },
   };
   api.updateGame(data, current)
@@ -50,9 +58,6 @@ const addCrudHandlers = () => {
   });
   $('.delete-game-button').on('click', function () {
     $('#delete-game-modal').modal('show');
-  });
-  $('.update-game-button').on('click', function () {
-    $('#update-game-modal').modal('show');
   });
   $('.set-lvl-form').on('submit', onCreateGame);
   $('.delete-game-form').on('submit', onDeleteGame);
