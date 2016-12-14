@@ -42,11 +42,7 @@ const updateGameFailure = () => {
 
 module.exports = {
   getGamesSuccess,
-  getGamesFailure,
   createGameSuccess,
-  createGameFailure,
   deleteGameSuccess,
-  deleteGameFailure,
   updateGameSuccess,
-  updateGameFailure,
 };

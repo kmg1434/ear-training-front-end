@@ -13,7 +13,7 @@ const onSignUp = function (e) {
     return api.signIn(data);
   })
   .then(ui.signInSuccess)
-  .catch(ui.signInFailure);
+  .catch(ui.authFailure);
 };
 
 const onSignIn = function (event) {
@@ -21,7 +21,7 @@ const onSignIn = function (event) {
   let data = getFormFields(event.target);
   api.signIn(data)
   .then(ui.signInSuccess)
-  .catch(ui.failure);
+  .catch(ui.authFailure);
 };
 
 const onSignOut = function (event) {
@@ -29,7 +29,7 @@ const onSignOut = function (event) {
   let data = getFormFields(event.target);
   api.signOut(data)
   .then(ui.signOutSuccess)
-  .catch(ui.signOutFailure);
+  .catch(ui.authFailure);
 };
 
 const onChangePassword = function (event) {
@@ -37,7 +37,7 @@ const onChangePassword = function (event) {
   let data = getFormFields(event.target);
   api.changePassword(data)
   .then(ui.changePasswordSuccess)
-  .catch(ui.changePasswordFailure);
+  .catch(ui.authFailure);
 };
 
 const addAuthHandlers = () => {

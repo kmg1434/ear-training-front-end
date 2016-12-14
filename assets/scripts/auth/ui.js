@@ -35,22 +35,13 @@ const changePasswordSuccess = () => {
   $('#change-password-modal').modal('hide');
 };
 
-// FAILURE FUNCTIONS
-
-const signUpFailure = () => {
-  console.log('error!');
-};
-
-const signInFailure = () => {
-  console.log('error!');
-};
-
-const signOutFailure = () => {
-  console.log('error!');
-};
-
-const changePasswordFailure = () => {
-  console.log('error!');
+const authFailure = function () {
+  $('.sign-up-fail').show();
+  $('.sign-in-fail').show();
+  $('.change-pw-fail').show();
+  $('.sign-up-fail').html('Oops, something went wrong, make sure all of your info is correct.');
+  $('.sign-in-fail').html('Oops, something went wrong, make sure all of your info is correct.');
+  $('.change-pw-fail').html('Oops, something went wrong, make sure all of your info is correct.');
 };
 
 module.exports = {
@@ -58,8 +49,5 @@ module.exports = {
   signInSuccess,
   signOutSuccess,
   changePasswordSuccess,
-  signUpFailure,
-  signInFailure,
-  signOutFailure,
-  changePasswordFailure,
+  authFailure,
 };
