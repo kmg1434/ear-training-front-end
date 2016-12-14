@@ -6,6 +6,7 @@ const vault = require('../vault.js');
 
 const signUpSuccess = () => {
   $('#sign-up-modal').modal('hide');
+  $('.sign-up-form').trigger('reset');
 };
 
 const signInSuccess = (data) => {
@@ -16,6 +17,7 @@ const signInSuccess = (data) => {
   $('.sign-in-btn').hide();
   $('.sign-up-btn').hide();
   $('#sign-in-modal').modal('hide');
+  $('.sign-in-form').trigger('reset');
 
 };
 
@@ -33,6 +35,7 @@ const signOutSuccess = () => {
 
 const changePasswordSuccess = () => {
   $('#change-password-modal').modal('hide');
+  $('.change-password-form').trigger('reset');
 };
 
 const authFailure = function () {
