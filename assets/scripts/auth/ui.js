@@ -2,20 +2,10 @@
 
 const vault = require('../vault.js');
 
-// const events = require('./events.js');
-
 // SUCCESS FUNCTIONS
 
-const hideModals = () => {
-  $('#sign-up-modal').hide();
-//  $('#sign-in-modal').hide();
-//  $('#sign-out-modal').hide();
-  $('#change-password-modal').hide();
-  $('.modal-backdrop').remove();
-};
-
 const signUpSuccess = () => {
-  hideModals();
+  $('#sign-up-modal').modal('hide');
 };
 
 const signInSuccess = (data) => {
@@ -39,11 +29,10 @@ const signOutSuccess = () => {
   $('.bars').hide();
   $('#sign-out-modal').modal('hide');
 
-  // hideModals();
 };
 
 const changePasswordSuccess = () => {
-  hideModals();
+  $('#change-password-modal').modal('hide');
 };
 
 // FAILURE FUNCTIONS
