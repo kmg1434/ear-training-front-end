@@ -18,6 +18,7 @@ const signInSuccess = (data) => {
   $('.sign-up-btn').hide();
   $('#sign-in-modal').modal('hide');
   $('.sign-in-form').trigger('reset');
+  $('.sign-in-fail').hide();
 
 };
 
@@ -30,30 +31,14 @@ const signOutSuccess = () => {
   $('.sign-out-btn').hide();
   $('.bars').hide();
   $('#sign-out-modal').modal('hide');
+  $('.sign-up-fail').hide();
 
 };
 
-<<<<<<< HEAD
-// FAILURE FUNCTIONS
-
-const signUpFailure = () => {
-  //console.log('error!');
-};
-
-const signInFailure = () => {
-  //console.log('error!');
-};
-
-const signOutFailure = () => {
-  //console.log('error!');
-};
-
-const changePasswordFailure = () => {
-  //console.log('error!');
-=======
 const changePasswordSuccess = () => {
   $('#change-password-modal').modal('hide');
   $('.change-password-form').trigger('reset');
+  $('.change-pw-fail').hide();
 };
 
 const authFailure = function () {
@@ -63,7 +48,6 @@ const authFailure = function () {
   $('.sign-up-fail').html('Oops, something went wrong, make sure all of your info is correct.');
   $('.sign-in-fail').html('Oops, something went wrong, make sure all of your info is correct.');
   $('.change-pw-fail').html('Oops, something went wrong, make sure all of your info is correct.');
->>>>>>> ui
 };
 
 module.exports = {
