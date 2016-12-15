@@ -12,33 +12,30 @@ const getGamesSuccess = (data) => {
   $('.bars').show();
 };
 
-const getGamesFailure = () => {
-  // console.log('error!');
-};
-
 const createGameSuccess = (data) => {
   vault.game = data.game;
   $('#create-game-modal').modal('hide');
 };
 
-const createGameFailure = () => {
-  // console.log('error!');
-};
-
 const deleteGameSuccess = () => {
   $('#delete-game-modal').modal('hide');
-};
-
-const deleteGameFailure = () => {
-  // console.log('error!');
+  $('.ui-feedback').hide();
+  $('.delete-ui-feedback').hide();
 };
 
 const updateGameSuccess = () => {
   $('#update-game-modal').modal('hide');
+  $('.ui-feedback').hide();
 };
 
-const updateGameFailure = () => {
-  // console.log('error!');
+const failure = () => {
+  $('.ui-feedback').show();
+  $('.ui-feedback').html('Something is not right. Make sure you have filled out all forms with the correct format');
+};
+
+const deleteGameFailure = () => {
+  $('.delete-ui-feedback').show();
+  $('.delete-ui-feedback').html('Something is not right. Make sure you have filled out all forms with the correct format');
 };
 
 module.exports = {
@@ -46,4 +43,6 @@ module.exports = {
   createGameSuccess,
   deleteGameSuccess,
   updateGameSuccess,
+  failure,
+  deleteGameFailure,
 };

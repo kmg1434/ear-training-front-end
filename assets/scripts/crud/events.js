@@ -9,20 +9,15 @@ $('.change-password-btn').hide();
 const onGetAllGames = function () {
   api.getAllGames()
     .then(ui.getGamesSuccess)
-    .catch(ui.getGamesFailure);
+    .catch(ui.failure);
 };
 
 const onCreateGame = function (event) {
   event.preventDefault();
   let data = getFormFields(this);
-<<<<<<< HEAD
-  //console.log('data.game.lvl: ' + data.game.lvl);
-=======
-  // // // console.log('data.game.lvl: ' + data.game.lvl);
->>>>>>> ui
   api.createGame(data)
     .then(ui.createGameSuccess)
-    .catch(ui.createGameFailure);
+    .catch(ui.failure);
 };
 
 const onDeleteGame = function (event) {
@@ -36,10 +31,6 @@ const onDeleteGame = function (event) {
 const onUpdateGame = function (event) {
   event.preventDefault();
   let current = getFormFields(this);
-<<<<<<< HEAD
-=======
-  // // // console.log('update game');
->>>>>>> ui
   let data = {
     game: {
       score: (Math.random() * 100).toFixed(1),
@@ -47,7 +38,7 @@ const onUpdateGame = function (event) {
   };
   api.updateGame(data, current)
     .then(ui.updateGameSuccess)
-    .catch(ui.updateGameFailure);
+    .catch(ui.failure);
 };
 
 const addCrudHandlers = () => {
