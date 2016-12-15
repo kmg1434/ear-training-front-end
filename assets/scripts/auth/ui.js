@@ -18,6 +18,7 @@ const signInSuccess = (data) => {
   $('.sign-up-btn').hide();
   $('#sign-in-modal').modal('hide');
   $('.sign-in-form').trigger('reset');
+  $('.sign-in-fail').hide();
 
 };
 
@@ -30,12 +31,14 @@ const signOutSuccess = () => {
   $('.sign-out-btn').hide();
   $('.bars').hide();
   $('#sign-out-modal').modal('hide');
+  $('.sign-up-fail').hide();
 
 };
 
 const changePasswordSuccess = () => {
   $('#change-password-modal').modal('hide');
   $('.change-password-form').trigger('reset');
+  $('.change-pw-fail').hide();
 };
 
 const authFailure = function () {
