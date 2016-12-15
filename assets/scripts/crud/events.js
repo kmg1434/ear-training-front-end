@@ -9,16 +9,15 @@ $('.change-password-btn').hide();
 const onGetAllGames = function () {
   api.getAllGames()
     .then(ui.getGamesSuccess)
-    .catch(ui.getGamesFailure);
+    .catch(ui.failure);
 };
 
 const onCreateGame = function (event) {
   event.preventDefault();
   let data = getFormFields(this);
-  //console.log('data.game.lvl: ' + data.game.lvl);
   api.createGame(data)
     .then(ui.createGameSuccess)
-    .catch(ui.createGameFailure);
+    .catch(ui.failure);
 };
 
 const onDeleteGame = function (event) {
@@ -34,12 +33,12 @@ const onUpdateGame = function (event) {
   let current = getFormFields(this);
   let data = {
     game: {
-      score: Math.random(),
+      score: (Math.random() * 100).toFixed(1),
     },
   };
   api.updateGame(data, current)
     .then(ui.updateGameSuccess)
-    .catch(ui.updateGameFailure);
+    .catch(ui.failure);
 };
 
 const addCrudHandlers = () => {
@@ -50,9 +49,6 @@ const addCrudHandlers = () => {
   });
   $('.delete-game-button').on('click', function () {
     $('#delete-game-modal').modal('show');
-  });
-  $('.update-game-button').on('click', function () {
-    $('#update-game-modal').modal('show');
   });
   $('.set-lvl-form').on('submit', onCreateGame);
   $('.delete-game-form').on('submit', onDeleteGame);

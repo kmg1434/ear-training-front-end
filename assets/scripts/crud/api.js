@@ -27,7 +27,10 @@ const createGame = function (data) {
 const updateGame = function (data, current) {
   glob.vars.currentGameId = current.game.id;
   vault.game = data.game;
+<<<<<<< HEAD
   //console.log(current);
+=======
+>>>>>>> ui
   return $.ajax({
     url: vault.host + '/games/' + glob.vars.currentGameId,
     method: 'PATCH',
@@ -39,7 +42,10 @@ const updateGame = function (data, current) {
 };
 
 const deleteGame = function (data) {
+<<<<<<< HEAD
   //console.log(data);
+=======
+>>>>>>> ui
   return $.ajax({
     url: vault.host + '/games/' + data,
     method: 'DELETE',
