@@ -435,27 +435,30 @@ webpackJsonp([0],[
 
 	var getGamesSuccess = function getGamesSuccess(data) {
 	  var games = data.games;
-
-	  // console.log(games); // array of all game objects
-
 	  $('.bars').html(getGames(games));
 	  $('.bars').show();
+	  $('.ui-feedback').hide();
 	};
 
 	var createGameSuccess = function createGameSuccess(data) {
 	  vault.game = data.game;
 	  $('#create-game-modal').modal('hide');
+	  $('.ui-feedback').show();
+	  $('.ui-feedback').html('Click Get All Games to see your games!');
 	};
 
 	var deleteGameSuccess = function deleteGameSuccess() {
 	  $('#delete-game-modal').modal('hide');
 	  $('.ui-feedback').hide();
 	  $('.delete-ui-feedback').hide();
+	  $('.ui-feedback').show();
+	  $('.ui-feedback').html('Click Get All Games to see your updated games!');
 	};
 
 	var updateGameSuccess = function updateGameSuccess() {
 	  $('#update-game-modal').modal('hide');
-	  $('.ui-feedback').hide();
+	  $('.ui-feedback').show();
+	  $('.ui-feedback').html('Click Get All Games to see your updated games!');
 	};
 
 	var failure = function failure() {
